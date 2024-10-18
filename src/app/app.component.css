@@ -1,0 +1,8 @@
+/* src/styles.css or src/app/app.component.css */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: system-ui, sans-serif;
+}
