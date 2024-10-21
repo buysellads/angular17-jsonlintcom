@@ -38,11 +38,8 @@ export class AppComponent implements AfterViewInit {
         }
 
         window.optimize.queue.push(() => {
-          // console.log("Refresh all Optimize ads");
-          // window.optimize.refreshAll();
-
-          console.log("Pushh all Optimize ads");
-          window.optimize.pushAll();
+          console.log("Refresh all Optimize ads");
+          window.optimize.refreshAll();
         });
         
 
