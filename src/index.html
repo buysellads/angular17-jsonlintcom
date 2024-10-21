@@ -6,6 +6,20 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript">
+    // Load Optimize ad tag
+    (function(){
+      var bsa_optimize=document.createElement('script');
+      bsa_optimize.type='text/javascript';
+      bsa_optimize.async=true;
+      bsa_optimize.src='https://cdn4.buysellads.net/pub/jsonlint.js?'+(new Date()-new Date()%600000);
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa_optimize);
+    })();
+
+    // Declate the optimize.queue
+    window.optimize = window.optimize || { queue: [] };
+  </script>
+  
 </head>
 <body>
   <app-root></app-root>

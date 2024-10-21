@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { RouterLink, RouterOutlet, Router, NavigationEnd } from '@angular/router';
 
 declare var _carbonads: any;
+declare var window: { optimize: any };
 
 @Component({
   selector: 'app-root',
@@ -29,12 +30,18 @@ export class AppComponent implements AfterViewInit {
         console.log('Page routed to:', event.url);
         const carbonContainer = document.querySelector("#carbonContainer") as HTMLElement;
         const carbonAdElement = document.querySelector("#carbonads") as HTMLElement;
-        
+
         if(carbonAdElement == null) {
           this.loadCarbonScript(carbonContainer);
         } else {
           _carbonads.refresh();
         }
+
+        window.optimize.queue.push(() => {
+          console.log("Refresh all Optimize ads");
+          window.optimize.refreshAll();
+        });
+        
 
       }
     });
